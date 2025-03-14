@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education Grant</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    /* Styles for the language selector */
+    .language-selector-container {
+        text-align: right;
+        padding: 10px;
+    }
+    .header-text {
+        color: white;
+        font-size: 24px;
+        margin: 0;
+    }
+    #language-selector {
+        padding: 5px 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    /* Styles for buttons */
+    button {
+        padding: 10px 15px;
+        font-size: 16px;
+        color: white;
+        background-color: #007bff; /* Bootstrap primary color */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: #0056b3; /* Darker shade of Bootstrap primary color */
+    }
+    /* Styles for icons */
+    .bi {
+        font-size: 1.5em;
+        color: #007bff; /* Bootstrap primary color */
+        margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+ 
+
+  <header>
+    <h1 class="translator-text" data-en="Education Grant" data-ta="திட்ட வழிகாட்டுதல்">Education Grant </h1>
+    <nav>
+       <!-- Language Selector -->
+  <div class="language-selector-container">
+    <i class="bi bi-translate"></i>
+    <label for="language-selector">Language:</label>
+    <select id="language-selector">
+      <option value="en">English</option>
+      <option value="ta">Tamil</option>
+    </select>
+  </div>
+      <ul>
+        <li><a href="scheme.html" data-en="Home" data-ta="முகப்பு">Home</a></li>
+        <li><a href="#scheme.html" data-en="Schemes" data-ta="திட்டங்கள்">Schemes</a></li>
+        <li><a href="#about" data-en="About" data-ta="எங்களை பற்றி">About</a></li>
+        <li><a href="#contact" data-en="Contact" data-ta="தொடர்பு">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Steps Section -->
+    <section id="steps">
+      <h2 data-en="Steps to Apply for Education Grant" data-ta="கல்வி நிதியுதவிக்கான விண்ணப்ப படிகள்">Steps to Apply for Education Grant</h2>
+      <ol>
+        <li data-en="Step 1: Complete the online application form." data-ta="படி 1: ஆன்லைன் விண்ணப்பப் படிவத்தை நிரப்புக.">Step 1: Complete the online application form.</li>
+        <li data-en="Step 2: Submit required documents." data-ta="படி 2: தேவையான ஆவணங்களை சமர்ப்பிக்கவும்.">Step 2: Submit required documents.</li>
+        <li data-en="Step 3: Attend an interview (if applicable)." data-ta="படி 3: நேர்முகப் பேட்டியில் பங்கேற்கவும் (தேவையானவரை).">Step 3: Attend an interview (if applicable).</li>
+        <li data-en="Step 4: Await approval notification." data-ta="படி 4: ஒப்புதல் அறிவிப்புக்காக காத்திருங்கள்.">Step 4: Await approval notification.</li>
+        <li data-en="Step 5: Receive your education grant." data-ta="படி 5: உங்கள் கல்வி நிதியுதவியை பெறுங்கள்.">Step 5: Receive your education grant.</li>
+      </ol>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2 data-en="About Us" data-ta="எங்களை பற்றி">About Us</h2>
+      <p class="CENTERED" data-en="We provide education grants to support students in achieving their academic goals." data-ta="மாணவர்கள் கல்வி இலக்குகளை அடைவதில் ஆதரிக்க கல்வி நிதியுதவிகளை நாங்கள் வழங்குகிறோம்.">We provide education grants to support students in achieving their academic goals.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 data-en="Contact Us" data-ta="தொடர்பு கொள்ள">Contact Us</h2>
+      <p class="centered" data-en="If you need further assistance, feel free to reach out to us." data-ta="மேலும் உதவி தேவைப்பட்டால், எங்களை தொடர்பு கொள்ளலாம்.">If you need further assistance, feel free to reach out to us.</p>
+      <form id="contact-form">
+        <label for="name" data-en="Name:" data-ta="பெயர்:">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email" data-en="Email:" data-ta="மின்னஞ்சல்:">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message" data-en="Message:" data-ta="செய்தி:">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <button type="submit" data-en="Submit" data-ta="சமர்ப்பிக்க">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Scheme Guidance. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Function to toggle language
+    document.getElementById("language-selector").addEventListener("change", function() {
+      const selectedLanguage = this.value;
+      const elements = document.querySelectorAll("[data-en], [data-ta]");
+      elements.forEach(el => {
+        el.textContent = el.getAttribute(`data-${selectedLanguage}`);
+      });
+    });
+  </script>
+</body>
+</html>
